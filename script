@@ -1,0 +1,158 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "TeleportGUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 430, 0, 355)
+frame.Position = UDim2.new(0, 20, 0.3, 0)
+frame.BackgroundColor3 = Color3.fromRGB(45, 35, 65)
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local function teleportTo(x, y, z)
+    local character = player.Character
+        or player.CharacterAdded:Wait()
+
+    character:PivotTo(CFrame.new(x, y, z))
+end
+
+-- Кнопка 1
+local button1 = Instance.new("TextButton")
+button1.Size = UDim2.new(0, 200, 0, 55)
+button1.Position = UDim2.new(0, 10, 0, 45)
+button1.Text = "🥚 Яйцо"
+button1.TextScaled = true
+button1.Parent = frame
+
+button1.Activated:Connect(function()
+    teleportTo(7536.6, 19.7, 21943.4)
+end)
+
+-- Кнопка 2
+local button2 = Instance.new("TextButton")
+button2.Size = UDim2.new(0, 200, 0, 55)
+button2.Position = UDim2.new(0, 10, 0, 105)
+button2.Text = "🏠 Дом 1"
+button2.TextScaled = true
+button2.Parent = frame
+
+button2.Activated:Connect(function()
+    teleportTo(7488.6, 21.5, 21918.7)
+end)
+
+-- Кнопка 3
+local button3 = Instance.new("TextButton")
+button3.Size = UDim2.new(0, 200, 0, 55)
+button3.Position = UDim2.new(0, 10, 0, 165)
+button3.Text = "🏠 Дом 2"
+button3.TextScaled = true
+button3.Parent = frame
+
+button3.Activated:Connect(function()
+    teleportTo(7488.2, 17.3, 22080.0)
+end)
+
+-- Кнопка 4
+local button4 = Instance.new("TextButton")
+button4.Size = UDim2.new(0, 200, 0, 55)
+button4.Position = UDim2.new(0, 10, 0, 225)
+button4.Text = "🏠 Дом 3"
+button4.TextScaled = true
+button4.Parent = frame
+
+button4.Activated:Connect(function()
+    teleportTo(7546.2, 18.5, 21918.5)
+end)
+
+-- Кнопка 5
+local button5 = Instance.new("TextButton")
+button5.Size = UDim2.new(0, 200, 0, 55)
+button5.Position = UDim2.new(0, 10, 0, 285)
+button5.Text = "🏠 Дом 4"
+button5.TextScaled = true
+button5.Parent = frame
+
+button5.Activated:Connect(function()
+    teleportTo(7534.2, 19.5, 22085.6)
+end)
+
+-- Кнопка 6
+local button6 = Instance.new("TextButton")
+button6.Size = UDim2.new(0, 200, 0, 55)
+button6.Position = UDim2.new(0, 220, 0, 45)
+button6.Text = "🏠 Дом 5"
+button6.TextScaled = true
+button6.Parent = frame
+
+button6.Activated:Connect(function()
+    teleportTo(7588.4, 19.0, 21917.7)
+end)
+
+-- Кнопка 7
+local button7 = Instance.new("TextButton")
+button7.Size = UDim2.new(0, 200, 0, 55)
+button7.Position = UDim2.new(0, 220, 0, 105)
+button7.Text = "🏠 Дом 6"
+button7.TextScaled = true
+button7.Parent = frame
+
+button7.Activated:Connect(function()
+    teleportTo(7578.9, 18.5, 22082.2)
+end)
+
+-- Кнопка 8
+local button8 = Instance.new("TextButton")
+button8.Size = UDim2.new(0, 200, 0, 55)
+button8.Position = UDim2.new(0, 220, 0, 165)
+button8.Text = "🏠 Дом 7"
+button8.TextScaled = true
+button8.Parent = frame
+
+button8.Activated:Connect(function()
+    teleportTo(7633.7, 18.8, 21918.1)
+end)
+
+-- Кнопка 9
+local button9 = Instance.new("TextButton")
+button9.Size = UDim2.new(0, 200, 0, 55)
+button9.Position = UDim2.new(0, 220, 0, 225)
+button9.Text = "🏠 Дом 8"
+button9.TextScaled = true
+button9.Parent = frame
+
+button9.Activated:Connect(function()
+    teleportTo(7633.5, 19.0, 22082.8)
+end)
+
+-- Кнопка 10
+local button10 = Instance.new("TextButton")
+button10.Size = UDim2.new(0, 200, 0, 55)
+button10.Position = UDim2.new(0, 220, 0, 285)
+button10.Text = "фарм"
+button10.TextScaled = true
+button10.Parent = frame
+
+button10.Activated:Connect(function()
+    teleportTo(7540.5, 16.2, 21967.8)
+end)
+
+-- Кнопка закрытия
+local close = Instance.new("TextButton")
+close.Size = UDim2.new(0, 35, 0, 35)
+close.Position = UDim2.new(1, -35, 0, 0)
+close.Text = "X"
+close.TextScaled = true
+close.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+close.TextColor3 = Color3.new(1, 1, 1)
+close.ZIndex = 10
+close.Active = true
+close.Visible = true
+close.Parent = frame
+
+close.Activated:Connect(function()
+    gui:Destroy()
+end)
